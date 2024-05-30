@@ -1,0 +1,19 @@
+project:
+  type: website
+
+website:
+  title: "The Church at West Franklin:  Deacon Resources"
+  navbar:
+    left:
+      - href: index.qmd
+        text: About
+      - href: widow.qmd
+
+format:
+  html:
+    theme: cerulean
+    css: styles.css
+    toc: true
+
+editor: visual
+
