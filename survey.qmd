@@ -1,0 +1,10 @@
+---
+title: "Survey Results"
+---
+
+------------------------------------------------------------------------
+
+#### 2024 Congregational Survey Results
+
+<iframe src="age_distribution.html" width="900" height="3000">
+</iframe>

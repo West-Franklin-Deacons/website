@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Age Distribution of Respondents</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            background-color: rgba(84, 86, 91, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        h1 {
+            color: #13294B;
+            font-size: 20px;  /* Changed from 24px to 20px */
+            margin-bottom: 4px;
+        }
+        .subtitle {
+            color: #54565B;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .analysis {
+            margin-top: 30px;
+            color: #13294B;
+            line-height: 1.6;
+        }
+        .chart-container {
+            height: 300px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mature Congregation: Half of Respondents Over 55, 70% Over 40</h1>
+        <div class="subtitle">Total Respondents: 110</div>
+        
+        <div class="chart-container">
+            <canvas id="ageChart"></canvas>
+        </div>
+        
+        <br>
+        <br>
+        
+        <div class="analysis">
+            <h3>Life Stage Analysis</h3>
+            
+            <p><strong>Young Adults (19-25):</strong> This smallest group (2 respondents) represents college students and early career professionals. They are typically single and focused on education or establishing careers. Their primary needs often center around community, mentorship, and finding their place in both career and faith.</p>
+            
+            <p><strong>Young Families (26-40):</strong> This group (19 respondents) is likely in their prime family-forming years. Based on demographic averages, this group probably represents about 25-30 children collectively, mostly in elementary school or younger. They are often juggling young careers with parenting, seeking both practical support and spiritual guidance for raising children in the faith. Many are likely in their first decade of marriage, while some may be single parents.</p>
+            
+            <p><strong>Established Adults (41-55):</strong> This significant group (23 respondents) typically has middle school to college-aged children. They're often at their career peaks while navigating the challenges of teenage children, college planning, and possibly caring for aging parents. Their children are making major life decisions about faith, education, and identity.</p>
+            
+            <p><strong>Empty Nesters (56-70):</strong> This large group (31 respondents) is often transitioning from career to retirement and from active parenting to grandparenting. Many are experiencing new freedom but also new challenges as they redefine their roles and purpose. They often have significant wisdom and time to offer the church while seeking meaningful ways to continue contributing.</p>
+            
+            <p><strong>Senior Adults (71+):</strong> The largest group (35 respondents) represents a wealth of life experience and wisdom. They're typically focused on legacy, meaningful relationships with adult children and grandchildren, and finding ways to remain actively involved in church life despite potential physical limitations. Many may be navigating widowhood or health challenges while maintaining their vital role in church community.</p>
+
+            <p><strong>Ministry Implications:</strong> The age distribution suggests a need for strong programs serving multiple generations simultaneously: robust children's ministry for the young families, youth programs for the established adults' children, and opportunities for the significant senior population to mentor younger generations. The relatively small young adult population might indicate an opportunity for growth in reaching this demographic.</p>
+        </div>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('ageChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['19-25', '26-40', '41-55', '56-70', '71+'],
+                datasets: [{
+                    data: [1.8, 17.3, 20.9, 28.2, 31.8],
+                    backgroundColor: '#00A7E1',
+                    barThickness: 20
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const counts = [2, 19, 23, 31, 35];
+                                return `${context.raw}% (n=${counts[context.dataIndex]})`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        display: false,
+                        grid: {
+                            display: false
+                        }
+                    },
+                    y: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
