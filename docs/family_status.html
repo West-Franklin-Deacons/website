@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Age and Family Status Distribution</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+        .container {
+            background-color: rgba(84, 86, 91, 0.1);
+            padding: 10px;
+            border-radius: 8px;
+        }
+        h1 {
+            color: #13294B;
+            font-size: 20px;
+            margin-bottom: 4px;
+        }
+        .subtitle {
+            color: #54565B;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .chart-section {
+            margin: 20px 0;
+            padding: 10px 0;
+        }
+        .chart-title {
+            color: #13294B;
+            font-size: 16px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .chart-container {
+            height: 150px;
+            margin: 10px 0;
+            background-color: rgba(84, 86, 91, 0.1);
+        }
+        .analysis {
+            margin-top: 100px;
+            color: #13294B;
+            line-height: 1.6;
+        }
+        .analysis-section {
+            margin: 40px 0;
+        }
+        .methodological-note {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: rgba(84, 86, 91, 0.1);
+            border-left: 4px solid #00A7E1;
+        }
+        ul ul {
+            margin-left: 20px;
+        }
+        h4 {
+            margin-top: 30px;
+            color: #13294B;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Age Groups by Family Status</h1>
+        <div class="subtitle">Total Respondents: 110</div>
+
+        <div class="chart-section">
+            <div class="chart-title">71+ Age Group (n=35)</div>
+            <div class="chart-container">
+                <canvas id="senior"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-section">
+            <div class="chart-title">56-70 Age Group (n=31)</div>
+            <div class="chart-container">
+                <canvas id="empty"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-section">
+            <div class="chart-title">41-55 Age Group (n=23)</div>
+            <div class="chart-container">
+                <canvas id="established"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-section">
+            <div class="chart-title">26-40 Age Group (n=19)</div>
+            <div class="chart-container">
+                <canvas id="young"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-section">
+            <div class="chart-title">19-25 Age Group (n=2)</div>
+            <div class="chart-container">
+                <canvas id="youngest"></canvas>
+            </div>
+        </div>
+
+        <div class="analysis">
+            <div class="methodological-note">
+                <h3>Important Note About Empty Nester Classification</h3>
+                <p>The reported numbers for "Empty Nesters" likely underrepresent the actual number of respondents whose children have left home. Many respondents in the 56+ age groups who selected "Married" or "Single" may technically be empty nesters but chose not to identify themselves this way. This could be due to:</p>
+                <ul>
+                    <li>Personal identity preferences (not seeing themselves primarily as "empty nesters")</li>
+                    <li>Having adult children still living at home or nearby</li>
+                    <li>Ongoing active involvement in their adult children's lives</li>
+                    <li>Survey design limitations in capturing multiple life stage identities</li>
+                </ul>
+                <p>This means the "Married" and "Single" categories in older age groups likely include many de facto empty nesters, which should be considered when planning ministry initiatives.</p>
+            </div>
+
+            <div class="analysis-section">
+                <h3>Generational Family Patterns</h3>
+                <ul>
+                    <li>The 71+ age group (n=35) shows a traditional pattern with most being married (19 respondents, 54.3%), while the rest are either single (10 respondents, 28.6%) or identify as empty nesters (6 respondents, 17.1%).</li>
+                    
+                    <li>The 56-70 age group (n=31) shows the most diverse family status distribution, with married individuals (15 respondents, 48.4%) leading, followed by singles (8 respondents, 25.8%), empty nesters (5 respondents, 16.1%), and some still with children at home (3 respondents, 9.7%).</li>
+                    
+                    <li>In the 41-55 age group (n=23), there's a notable shift with singles being the largest segment (10 respondents, 43.5%), followed by married individuals (8 respondents, 34.8%), those with children (3 respondents, 13.0%), and single parents (2 respondents, 8.7%).</li>
+                    
+                    <li>The 26-40 age group (n=19) shows expected patterns for this life stage, with nearly half having children (9 respondents, 47.4%), followed closely by married without children (8 respondents, 42.1%), and a small single population (2 respondents, 10.5%).</li>
+                </ul>
+            </div>
+
+            <div class="analysis-section">
+                <h3>Ministry Implications</h3>
+                
+                <h4>Family Faith Journey Support</h4>
+                <ul>
+                    <li>With 12 families reporting children at home, there's a clear desire for spiritual formation support. These parents are actively seeking ways to nurture their children's faith and character development during crucial formative years.</li>
+                    
+                    <li>The significant empty nester population (plus many in the married 56+ category) represents a wealth of parenting experience - both encouraging stories of children walking with God and challenging stories of children who have stepped away from faith. This real-world experience could be invaluable to younger families.</li>
+                    
+                    <li>Consider creating intentional mentoring connections between experienced parents and younger families, focusing on practical approaches to spiritual formation in different life stages.</li>
+                </ul>
+
+                <h4>Intergenerational Ministry Opportunities</h4>
+                <ul>
+                    <li>The mature population (56+ represents nearly 60% of respondents) holds decades of life experience, spiritual wisdom, and tested faith that younger generations need. Many may not recognize how valuable their experience could be to younger families.</li>
+                    
+                    <li>Young families (particularly the 26-40 age group) could benefit greatly from hearing stories of God's faithfulness across decades of family life. This might include:
+                        <ul>
+                            <li>How families maintained faith through challenges</li>
+                            <li>Practical approaches to family discipleship that proved effective</li>
+                            <li>Ways to navigate cultural changes while maintaining biblical values</li>
+                            <li>How to support adult children who may be questioning their faith</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h4>Strategic Ministry Development</h4>
+                <ul>
+                    <li>Create structured opportunities for older adults to share their family faith stories - both successes and struggles - with younger parents. This vulnerability and authenticity could be especially meaningful.</li>
+                    
+                    <li>Develop mentoring programs that pair empty nesters with young families, focusing on both practical parenting wisdom and spiritual guidance.</li>
+                    
+                    <li>Consider forming support groups for empty nesters dealing with adult children who have left the faith, while using their experience to help current parents understand potential challenges.</li>
+                    
+                    <li>Design family ministry programs that intentionally bring multiple generations together, rather than always segregating by age group.</li>
+                </ul>
+
+                <h4>Leadership Development</h4>
+                <ul>
+                    <li>The mature adult population represents a significant leadership resource for family ministry initiatives. Their life experience and typically greater time availability make them ideal mentors and program leaders.</li>
+                    
+                    <li>Young families' current experiences with raising children in today's culture can help inform how the church updates and adapts its family ministry approaches while maintaining biblical foundations.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function createChart(elementId, data) {
+            const ctx = document.getElementById(elementId).getContext('2d');
+            
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: data.labels,
+                    datasets: [{
+                        data: data.percentages,
+                        backgroundColor: '#00A7E1',
+                        barThickness: 20,
+                        hoverBackgroundColor: '#13294B'
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            enabled: true,
+                            callbacks: {
+                                label: function(context) {
+                                    const index = context.dataIndex;
+                                    return `${data.percentages[index]}% (n=${data.counts[index]})`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            display: false,
+                            grid: { display: false },
+                            max: 100
+                        },
+                        y: {
+                            grid: { display: false }
+                        }
+                    },
+                    animation: {
+                        duration: 500
+                    },
+                    onComplete: function(chart) {
+                        var ctx = chart.chart.ctx;
+                        chart.data.datasets[0].data.forEach(function(value, index) {
+                            var meta = chart.chart.getDatasetMeta(0);
+                            var rect = meta.data[index];
+                            
+                            ctx.textBaseline = 'middle';
+                            ctx.textAlign = 'left';
+                            ctx.fillStyle = '#13294B';
+                            ctx.font = '12px Arial';
+                            
+                            var text = `${value}% (n=${data.counts[index]})`;
+                            ctx.fillText(text, rect.x + 5, rect.y);
+                        });
+                    }
+                }
+            });
+        }
+
+        // 71+ (n=35)
+        createChart('senior', {
+            labels: ['Married', 'Single', 'Empty Nester'],
+            percentages: [54.3, 28.6, 17.1],
+            counts: [19, 10, 6]
+        });
+
+        // 56-70 (n=31)
+        createChart('empty', {
+            labels: ['Married', 'Single', 'Empty Nester', 'Married with Children'],
+            percentages: [48.4, 25.8, 16.1, 9.7],
+            counts: [15, 8, 5, 3]
+        });
+
+        // 41-55 (n=23)
+        createChart('established', {
+            labels: ['Single', 'Married', 'Married with Children', 'Single Parent'],
+            percentages: [43.5, 34.8, 13.0, 8.7],
+            counts: [10, 8, 3, 2]
+        });
+
+        // 26-40 (n=19)
+        createChart('young', {
+            labels: ['Married with Children', 'Married', 'Single'],
+            percentages: [47.4, 42.1, 10.5],
+            counts: [9, 8, 2]
+        });
+
+        // 19-25 (n=2)
+        createChart('youngest', {
+            labels: ['Single'],
+            percentages: [100],
+            counts: [2]
+        });
+    </script>
+</body>
+</html>
