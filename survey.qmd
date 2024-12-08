@@ -13,5 +13,5 @@ title: "Survey Results"
 
 ### Respondents by Age Group and Family Status
 
-<iframe src="family_status.html" width="900" height="4250">
+<iframe src="family_status.html" width="900" height="4550">
 </iframe>
