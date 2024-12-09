@@ -13,5 +13,11 @@ title: "Survey Results"
 
 ### Respondents by Age Group and Family Status
 
-<iframe src="family_status.html" width="900" height="4550">
+<iframe src="family_status.html" width="900" height="4300">
+</iframe>
+
+
+### Respondents by Age Group, Attendance Duration, and Reasons for Choosing West Franklin
+
+<iframe src="attendance_and_reasons.html" width="900" height="4550">
 </iframe>

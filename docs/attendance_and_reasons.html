@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Age and Attendance Length Distribution</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #13294B;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #13294B;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        .subtitle {
+            color: #54565B;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .chart-section {
+            margin: 30px 0;
+        }
+        .chart-title {
+            color: #13294B;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .chart-container {
+            height: 150px;
+            background-color: rgba(84, 86, 91, 0.1);
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .analysis-section {
+            margin-top: 40px;
+        }
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 30px 0 15px 0;
+        }
+        .subsection {
+            margin: 20px 0;
+        }
+        .subsection-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .text-content {
+            color: #54565B;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .recommendations {
+            margin-left: 20px;
+            color: #54565B;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Age Groups by Length of Attendance</h1>
+        <div class="subtitle">Total Respondents: 110</div>
+
+        <div class="chart-section">
+            <div class="chart-title">71+ Age Group (n=35)</div>
+            <div class="chart-container">
+                <canvas id="senior"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-section">
+            <div class="chart-title">56-70 Age Group (n=31)</div>
+            <div class="chart-container">
+                <canvas id="middle"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-section">
+            <div class="chart-title">41-55 Age Group (n=23)</div>
+            <div class="chart-container">
+                <canvas id="established"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-section">
+            <div class="chart-title">26-40 Age Group (n=19)</div>
+            <div class="chart-container">
+                <canvas id="young"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-section">
+            <div class="chart-title">19-25 Age Group (n=2)</div>
+            <div class="chart-container">
+                <canvas id="youngest"></canvas>
+            </div>
+        </div>
+
+        <div class="analysis-section">
+            <div class="section-title">Key Patterns and Ministry Insights</div>
+
+            <div class="subsection">
+                <div class="subsection-title">71+ Age Group Dynamics</div>
+                <p class="text-content">
+                    The senior adult group consistently cites "preaching and biblical teaching" as their primary reason 
+                    for choosing West Franklin. When asked what stands out, they frequently mention "friendliness" and 
+                    "worship experience." Their long-term attendance pattern (57.2% attending 4+ years) suggests they 
+                    find deep value in these core aspects of church life.
+                </p>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">56-70 Age Group Perspectives</div>
+                <p class="text-content">
+                    This group shows the strongest medium-term commitment (45.2% in 4-7 year range) and often mentions 
+                    "community feel" and "size of congregation" as key factors in their choice. They particularly value 
+                    the balance of traditional and contemporary elements, with many noting the "family atmosphere" as a 
+                    standout feature.
+                </p>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">41-55 Age Group Priorities</div>
+                <p class="text-content">
+                    Recent growth in this age group (34.8% joining in last 1-3 years) appears driven by the church's 
+                    strong biblical teaching and family ministry opportunities. They frequently cite "preaching style" 
+                    and "opportunities for involvement" as standout features, suggesting they value both spiritual depth 
+                    and active participation.
+                </p>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">26-40 Age Group Motivations</div>
+                <p class="text-content">
+                    Young families in this group overwhelmingly mention "community" and "children's programs" as their 
+                    main reasons for choosing West Franklin. The strong showing in the 4-7 year attendance range (42.1%) 
+                    correlates with positive feedback about "welcoming atmosphere" and "family-focused activities" as 
+                    standout features.
+                </p>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">19-25 Age Group Experience</div>
+                <p class="text-content">
+                    Though the smallest group, these young adults consistently mention "community" and "teaching" as 
+                    their primary draws. Their feedback emphasizes the importance of both spiritual growth opportunities 
+                    and social connections, suggesting potential growth areas for young adult ministry.
+                </p>
+            </div>
+
+            <div class="section-title">Addressing Needs of Newer Members by Age Group (Those who have been attending 3yrs or less: "Recent Joiners")</div>
+
+            <div class="subsection">
+                <div class="subsection-title">71+ Recent Joiners (15 members, 42.8% of age group)</div>
+                <p class="text-content">
+                    Common concerns center around physical accessibility and connection. Many mention transportation 
+                    challenges and difficulty attending evening events. Several note feeling "out of touch" with 
+                    technology used for church communications.
+                </p>
+                <div class="recommendations">
+                    Recommended Actions:
+                    <ul>
+                        <li>Establish a transportation ministry specifically for senior adults</li>
+                        <li>Offer regular technology assistance sessions</li>
+                        <li>Ensure printed materials remain available alongside digital communications</li>
+                        <li>Create daytime fellowship opportunities</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">56-70 Recent Joiners (11 members, 35.4% of age group)</div>
+                <p class="text-content">
+                    This group expresses desire for deeper involvement but often feels uncertain about where they fit. 
+                    Several mention feeling "too young" for senior activities but "too old" for family-focused events. 
+                    Some note frustration with life group options that don't match their schedule or life stage.
+                </p>
+                <div class="recommendations">
+                    Recommended Actions:
+                    <ul>
+                        <li>Create specific ministry roles that leverage their experience</li>
+                        <li>Develop mixed-age life groups focused on shared interests rather than life stage</li>
+                        <li>Provide clear pathways for involvement in mentoring younger families</li>
+                        <li>Offer more flexible life group scheduling options</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">41-55 Recent Joiners (10 members, 43.4% of age group)</div>
+                <p class="text-content">
+                    Primary concerns revolve around juggling church involvement with busy family schedules. Several 
+                    single members in this age group mention feeling "overlooked" in a family-focused church. Some 
+                    express desire for more targeted support with parenting teenagers.
+                </p>
+                <div class="recommendations">
+                    Recommended Actions:
+                    <ul>
+                        <li>Create specific ministry opportunities for singles in this age range</li>
+                        <li>Develop support groups for parents of teenagers</li>
+                        <li>Offer more flexible serving opportunities that accommodate varying schedules</li>
+                        <li>Consider childcare availability for evening activities</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">26-40 Recent Joiners (7 members, 36.9% of age group)</div>
+                <p class="text-content">
+                    Young families express challenges with childcare during church activities and desire for more 
+                    consistent children's programming. Several mention feeling overwhelmed by expectations to serve 
+                    while managing young families. Some note difficulty connecting beyond surface level in life groups.
+                </p>
+                <div class="recommendations">
+                    Recommended Actions:
+                    <ul>
+                        <li>Expand childcare availability for church activities</li>
+                        <li>Create more family-inclusive serving opportunities</li>
+                        <li>Develop shorter-term commitment options for ministry involvement</li>
+                        <li>Structure life groups to allow deeper sharing and support</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">19-25 Recent Joiners (2 members, 100% of age group)</div>
+                <p class="text-content">
+                    Though a small group, they express feeling disconnected from their age peers and uncertain about 
+                    their role in the church. They mention wanting more opportunities for meaningful involvement beyond 
+                    youth ministry but feeling intimidated by adult programs.
+                </p>
+                <div class="recommendations">
+                    Recommended Actions:
+                    <ul>
+                        <li>Create specific young adult fellowship opportunities</li>
+                        <li>Develop mentoring connections with slightly older adults</li>
+                        <li>Provide clear pathways for involvement in church leadership</li>
+                        <li>Consider partnering with other churches for young adult activities</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Chart data and creation code
+        const data = {
+            senior: {
+                labels: ['8+ years', '4-7 years', '1-3 years', 'less than one year', 'less than 6 months'],
+                percentages: [28.6, 28.6, 25.7, 14.3, 2.8],
+                counts: [10, 10, 9, 5, 1]
+            },
+            middle: {
+                labels: ['8+ years', '4-7 years', '1-3 years', 'less than one year', 'less than 6 months'],
+                percentages: [19.4, 45.2, 22.6, 9.7, 3.1],
+                counts: [6, 14, 7, 3, 1]
+            },
+            established: {
+                labels: ['8+ years', '4-7 years', '1-3 years', 'less than one year', 'less than 6 months'],
+                percentages: [26.1, 30.4, 34.8, 4.3, 4.3],
+                counts: [6, 7, 8, 1, 1]
+            },
+            young: {
+                labels: ['8+ years', '4-7 years', '1-3 years', 'less than one year', 'less than 6 months'],
+                percentages: [21.1, 42.1, 26.3, 5.3, 5.3],
+                counts: [4, 8, 5, 1, 1]
+            },
+            youngest: {
+                labels: ['8+ years', 'less than 6 months'],
+                percentages: [0, 100],
+                counts: [0, 2]
+            }
+        };
+
+        function createChart(elementId, data) {
+            const ctx = document.getElementById(elementId).getContext('2d');
+            
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: data.labels,
+                    datasets: [{
+                        data: data.percentages,
+                        backgroundColor: '#00A7E1',
+                        barThickness: 20,
+                        hoverBackgroundColor: '#13294B'
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            enabled: true,
+                            callbacks: {
+                                label: function(context) {
+                                    const index = context.dataIndex;
+                                    return `${data.percentages[index]}% (n=${data.counts[index]})`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            display: false,
+                            grid: { display: false },
+                            max: 100
+                        },
+                        y: {
+                            grid: { display: false }
+                        }
+                    },
+                    animation: {
+                        duration: 500
+                    },
+                    onComplete: function(chart) {
+                        const ctx = chart.chart.ctx;
+                        chart.data.datasets[0].data.forEach((value, index) => {
+                            const meta = chart.chart.getDatasetMeta(0);
+                            const rect = meta.data[index];
+                            
+                            ctx.textBaseline = 'middle';
+                            ctx.textAlign = 'left';
+                            ctx.fillStyle = '#13294B';
+                            ctx.font = '12px Arial';
+                            
+                            const text = `${value}% (n=${data.counts[index]})`;
+                            ctx.fillText(text, rect.x + 5, rect.y);
+                        });
+                    }
+                }
+            });
+        }
+
+        // Create all charts
+        createChart('senior', data.senior);
+        createChart('middle', data.middle);
+        createChart('established', data.established);
+        createChart('young', data.young);
+        createChart('youngest', data.youngest);
+    </script>
+</body>
+</html>
