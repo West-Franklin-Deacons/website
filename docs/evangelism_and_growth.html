@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Building Confident Church Advocates</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            background-color: rgba(84, 86, 91, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #13294B;
+            font-size: 20px;
+            margin-bottom: 4px;
+        }
+        .subtitle {
+            color: #54565B;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .analysis {
+            margin-top: 30px;
+            color: #13294B;
+            line-height: 1.6;
+        }
+        .chart-container {
+            height: 500px;
+            margin: 60px 0;
+            position: relative;
+        }
+        .highlight {
+            background-color: rgba(0, 167, 225, 0.1);
+            padding: 15px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .insight-box {
+            border-left: 4px solid #00A7E1;
+            padding: 15px;
+            margin: 20px 0;
+            background-color: white;
+        }
+        .growth-path {
+            border: 1px solid #00A7E1;
+            border-radius: 4px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .growth-level {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #54565B;
+        }
+        .growth-level:last-child {
+            border-bottom: none;
+        }
+        .chart-title {
+            text-align: center;
+            color: #13294B;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .chart-section {
+            margin-bottom: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Growing Together: From Church Love to Community Impact</h1>
+        <div class="subtitle">Building on our strong foundation of church satisfaction to reach our community</div>
+        
+        <div class="chart-section">
+            <div class="chart-title">How People Found West Franklin (%)</div>
+            <div class="chart-container">
+                <canvas id="discoveryChart"></canvas>
+            </div>
+        </div>
+        
+        <div class="analysis">
+            <h3>Current Strengths</h3>
+            <p>Our congregation shows remarkable strengths:</p>
+            <ul>
+                <li><strong>Strong Church Satisfaction:</strong> 82% are enthusiastic about their church experience</li>
+                <li><strong>Personal Connections Matter:</strong> 38% found us through friends and family</li>
+                <li><strong>Desire to Grow:</strong> Many express interest in deeper community impact</li>
+            </ul>
+        </div>
+
+        <div class="insight-box">
+            <p><strong>Opportunity:</strong> Members love their church experience and want to share it with others. Let's build on this natural desire by providing simple, practical ways to extend our community impact.</p>
+        </div>
+
+        <div class="chart-section">
+            <div class="chart-title">Church Experience Rating (%)</div>
+            <div class="chart-container">
+                <canvas id="npsChart"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-section">
+            <div class="chart-title">Faith Sharing Confidence Levels (%)</div>
+            <div class="chart-container">
+                <canvas id="gospelReadinessChart"></canvas>
+            </div>
+        </div>
+        
+        <div class="analysis">
+            <h3>Growing Our Impact: A Step-by-Step Approach</h3>
+            
+            <div class="growth-path">
+                <div class="growth-level">
+                    <h4>Level 1: Simple Sharing (Starting Point)</h4>
+                    <ul>
+                        <li>Share church social media posts about events and activities</li>
+                        <li>Like and comment on church updates</li>
+                        <li>Mention upcoming church events to friends</li>
+                        <li>Share photos from church activities you enjoy</li>
+                    </ul>
+                </div>
+
+                <div class="growth-level">
+                    <h4>Level 2: Personal Invitation</h4>
+                    <ul>
+                        <li>Invite friends to social events or holiday services</li>
+                        <li>Share what you enjoy about your life group</li>
+                        <li>Bring neighbors to community service projects</li>
+                        <li>Tell stories about positive church experiences</li>
+                    </ul>
+                </div>
+
+                <div class="growth-level">
+                    <h4>Level 3: Deeper Connections</h4>
+                    <ul>
+                        <li>Share how church has impacted your life personally</li>
+                        <li>Listen for and respond to friends' spiritual questions</li>
+                        <li>Participate in community service with church groups</li>
+                        <li>Share brief testimonials in comfortable settings</li>
+                    </ul>
+                </div>
+
+                <div class="growth-level">
+                    <h4>Level 4: Faith Conversations</h4>
+                    <ul>
+                        <li>Join a mentor pair to learn from experienced members</li>
+                        <li>Practice sharing your faith story in life groups</li>
+                        <li>Learn simple ways to transition from life to faith discussions</li>
+                        <li>Participate in community outreach events</li>
+                    </ul>
+                </div>
+
+                <div class="growth-level">
+                    <h4>Level 5: Community Impact</h4>
+                    <ul>
+                        <li>Lead community service initiatives</li>
+                        <li>Mentor others in sharing their faith</li>
+                        <li>Develop new outreach opportunities</li>
+                        <li>Share your experience with newer members</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight">
+                <p><strong>Supporting Resources for Each Level:</strong></p>
+                <ul>
+                    <li>Short video examples of natural conversations</li>
+                    <li>Shareable social media content templates</li>
+                    <li>Simple conversation starter cards</li>
+                    <li>Monthly life group discussion guides</li>
+                    <li>Regular training opportunities</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Discovery Methods Chart
+        const discoveryCtx = document.getElementById('discoveryChart').getContext('2d');
+        new Chart(discoveryCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Personal Connections', 'Location-Based', 'BBC Connection', 'Digital Discovery'],
+                datasets: [{
+                    data: [38, 31, 22, 9],
+                    backgroundColor: '#00A7E1',
+                    barThickness: 40
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    title: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 40
+                    }
+                }
+            }
+        });
+
+        // NPS Chart
+        const npsCtx = document.getElementById('npsChart').getContext('2d');
+        new Chart(npsCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Love Their Church (9-10)', 'Satisfied (7-8)', 'Room to Grow (0-6)'],
+                datasets: [{
+                    data: [82, 15, 3],
+                    backgroundColor: ['#00A7E1', '#54565B', '#13294B']
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { 
+                        position: 'right',
+                        labels: {
+                            padding: 20
+                        }
+                    },
+                    title: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+        // Gospel Readiness Chart
+        const gospelCtx = document.getElementById('gospelReadinessChart').getContext('2d');
+        new Chart(gospelCtx, {
+            type: 'bar',
+            data: {
+                labels: [
+                    'Very Confident (8-10)', 
+                    'Growing Confidence (5-7)', 
+                    'Building Confidence (1-4)',
+                    'Would Like Training'
+                ],
+                datasets: [{
+                    data: [24, 42, 34, 73],
+                    backgroundColor: '#00A7E1',
+                    barThickness: 40
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    title: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 80
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

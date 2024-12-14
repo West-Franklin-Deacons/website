@@ -11,6 +11,7 @@ title: "Survey Results"
 <iframe src="age_distribution.html" width="900" height="1400">
 </iframe>
 
+
 ### Respondents by Age Group and Family Status
 
 <iframe src="family_status.html" width="900" height="4300">
@@ -20,4 +21,10 @@ title: "Survey Results"
 ### Respondents by Age Group, Attendance Duration, and Reasons for Choosing West Franklin
 
 <iframe src="attendance_and_reasons.html" width="900" height="4550">
+</iframe>
+
+
+### Evangelism Readiness & Church Growth Analysis
+
+<iframe src="evangelism_and_growth.html" width="900" height="4550">
 </iframe>
