@@ -20,11 +20,11 @@ title: "Survey Results"
 
 ### Respondents by Age Group, Attendance Duration, and Reasons for Choosing West Franklin
 
-<iframe src="attendance_and_reasons.html" width="900" height="4550">
+<iframe src="attendance_and_reasons.html" width="900" height="4700">
 </iframe>
 
 
 ### Evangelism Readiness & Church Growth Analysis
 
-<iframe src="evangelism_and_growth.html" width="900" height="4550">
+<iframe src="evangelism_and_growth.html" width="900" height="4200">
 </iframe>
