@@ -20,7 +20,7 @@ title: "Survey Results"
 
 ### Respondents by Age Group, Attendance Duration, and Reasons for Choosing West Franklin
 
-<iframe src="attendance_and_reasons.html" width="900" height="4700">
+<iframe src="attendance_and_reasons.html" width="900" height="4400">
 </iframe>
 
 
