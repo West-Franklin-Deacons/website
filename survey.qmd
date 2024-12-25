@@ -4,7 +4,28 @@ title: "Survey Results"
 
 ------------------------------------------------------------------------
 
-#### 2024 Congregational Survey Results
+## 2024 Congregational Survey Results
+
+#### Navigation
+This analysis is best viewed on a desktop PC, but it's also possible to view on a mobile device or tablet.  If you are navigating on a mobile device or tablet and you arrive at the bottom of section, you may need to 'tap' or 'double-tap' in order to continue scrolling to the next section.  If on a desktop, there will be a section navigation at right.
+
+Regardless of device type, all of the charts/visuals should be interactive.  That means that if you're on a desktop, more information will be provided when you hover over a particular bar.  If you're on a mobile device or tablet, you'll need to click on a bar (or chart section) instead of hover.  Most visuals here represent percentages, but a count will also be provided (e.g. 'n=10' for 10 respondents).
+
+#### How We Compiled and Analyzed Survey Results
+
+We received over 130 responses to the congregational survey.  Most questions were optional, so a particular respondent may have answered all questions in the survey, or they may have answered only some of them.  In short, some respondents elected to skip certain questions or failed to complete the entire survey.
+
+Completion rates aside, the data was provided by West Franklin Church staff for synthesis in a sanitized/anonymized format.  That is, there was no personally identifiable information included in the data set (e.g. first or last names, email addresses, etc.).  The staff took great care to respect and protect people's  privacy.
+
+Due to the large number of responses, human expertise supplemented by artificial intelligence (AI) was used to build a holistic understanding of the survey results.  See Anthropic's 'Claude' for further information about the AI capabilities used here: [https://www.anthropic.com/claude](https://www.anthropic.com/claude).
+
+The compilation of results is presented in different sections.  Please refer to the navigation pane at right for ease of navigation.  The first several sections pertain to understanding the makeup of the respondents by age groups, etc.  But several of the later sections focus on how current state of the congregation aligns to opportunities for maintaining mission focus.  See next section 'Ministry Context' for further information.
+
+Again, some of the responses/observations in the results are AI generated.  AI generated responses are not intended to be the 'gospel truth', actual representations of congregational realities, or where we should move as a congregation.  Instead, they serve a probable scenarios that church leaders should validate using their expertise and intuition.  Again, this analysis is meant to catalyze more conversation and activity about congregational direction. 
+
+#### Ministry Context
+
+In conjunction with providing survey responses to Claude AI, we also fed the AI the first two chapters of [Reggie McNeal's](https://reggiemcneal.org/) book 'The Prsent Future: Six Tough Questions for the Church'.  You can read a quick summary of this book [here](https://lifeandleadership.com/book-summaries/mcneal-the-present-future/).  The main reason for providing this type of context to the AI was to enable it to make better sense of where we're at as a congregation and where we might be able to (1) seize certain opportunties and (2) mitigate certain risks.
 
 ### Respnodents by Age Group
 
@@ -26,5 +47,319 @@ title: "Survey Results"
 
 ### Evangelism Readiness & Church Growth Analysis
 
-<iframe src="evangelism_and_growth.html" width="900" height="4200">
+<iframe src="evangelism_and_growth.html" width="900" height="4000">
 </iframe>
+
+### Activity & Engagement Analysis
+
+Note on this section:  AI generated responses in this section highlight the tension between 'inwardly-focused' challenges/opportunities vs. 'externally-focused' challenges/opportunities, the latter of which is mostly absent. The responses focus on 'needs of the church', not needs of our community per se.  To be fair, though, the survey questions were not outwardly-focused questions about how to server/minister/transform our community, so the inward nature of the responses make sense in that light.
+
+<iframe src="activity_and_engagement.html" width="900" height="2500">
+</iframe>
+
+### Community Engagement and Mission Interest
+
+**This section highlights a crucial shift McNeal advocates - from asking "How do we grow the church?" to "How do we transform our community?"**
+
+Key Insights Relating to McNeal's Text:
+
+Shift from Internal to External Focus:
+
+* Survey shows strong interest (45%) in local missions
+* Members seeking community transformation opportunities
+* Growing emphasis on partnerships with local organizations (Oak Cottage, Franklin Community)
+
+"Missional Spirituality" Indicators:
+
+* High interest in mission/outreach training (73%)
+* Desire for practical community engagement
+* Focus on relationship-building over programs
+
+Challenges in Transition:
+
+* Time constraints (42%) and family commitments (35%) are major barriers
+* Need for more mission-focused training and equipping
+* Balance between internal needs and external mission
+
+Community Transformation Focus:
+
+* Interest in local partnerships and community service
+* Desire for more neighborhood outreach opportunities
+* Recognition of need to engage beyond church walls
+
+The data suggests our congregation shows readiness for the shift McNeal describes, though there are practical barriers to overcome.
+
+<iframe src="mission_interest.html" width="900" height="1600">
+</iframe>
+
+### Internal vs. External Ministry Analysis
+
+**This section highlights a crucial contrast between insular, institutional religion and Jesus's outward-focused, relational ministry.**
+
+Key Parallels with McNeal's Text:
+
+"Pharisee Bubble" Tendencies:
+
+* Survey shows stronger comfort with internal programs (42%)
+* Preference for familiar church settings
+* Some resistance to external engagement
+
+Breaking Out of Institutional Patterns:
+
+* 73% interested in outreach training
+* Growing engagement with community ministries
+* Desire to move beyond traditional church activities
+
+Jesus's "Go Get 'Em" Approach:
+
+* Active involvement in Oak Cottage ministry
+* Interest in community transformation
+* Willingness to engage with diverse groups
+
+Areas for Growth:
+
+* Need for more confidence in faith sharing (only 24% confident)
+* Opportunity to expand community partnerships
+* Balance between internal needs and external mission
+
+The data suggests our congregation shows awareness of the need to move beyond institutional patterns, though there's still work to be done in fully embracing the outward-focused model Jesus demonstrated.
+
+<iframe src="mission_focus.html" width="900" height="1800">
+</iframe>
+
+### Church Accessibility for Non-Chruch-Folk
+
+**This section addresses a critical challenge: the tendency to expect non-church-folk to conform to church culture before they can belong.**
+
+Key Insights from McNeal's Text and Your Data:
+
+Cultural Conformity Expectations:
+
+* 65% of engagement focused on traditional Sunday morning format
+* High cultural familiarity requirements (45% report as barrier)
+* Limited alternative entry points for newcomers
+
+"Club Member Mentality" Indicators:
+
+* Schedule flexibility needed (42% report as barrier)
+* Social connections often required for full participation (35%)
+* Traditional format preferences limiting accessibility (30%)
+
+Opportunities for Change:
+
+* Potential for alternative meeting times/formats
+* Need for more community-based gatherings
+* Possibility of multiple pathways to belong
+
+Signs of Progress:
+
+* Growing interest in community outreach
+* Some flexibility in meeting formats emerging
+* Recognition of need for cultural bridge-building
+
+This analysis suggests our congregation faces the challenge McNeal describes of moving beyond a "club membership" model to more inclusive, mission-focused engagement.
+
+<iframe src="cultural_accessibility.html" width="900" height="1800">
+</iframe>
+
+### "Concentrated Effort" Intentionality
+
+**This section addresses the critical shift from internally-focused efforts to community transformation.**
+
+Key Insights Relating to McNeal's Text:
+
+Resource Allocation Tension:
+
+* Currently higher focus on internal programs (45%) vs. community outreach (35%)
+* Growing interest in community impact (38% prioritize)
+* Need to balance internal needs with external mission
+
+Signs of Missional Shift:
+
+* Strong interest in local missions and partnerships
+* Desire for community engagement training
+* Recognition of need for new ministry models
+
+Generational Dynamics:
+
+* Younger members show more interest in community impact
+* Growing civic consciousness noted in survey responses
+* Desire for practical community engagement
+
+Transformation Indicators:
+
+* Oak Cottage ministry engagement
+* Interest in community partnerships
+* Willingness to explore new ministry models
+* Focus on local impact over internal programming
+
+The data suggests your congregation is in transition between traditional internal focus and McNeal's vision of community transformation.
+
+<iframe src="effort_intentionality.html" width="900" height="1800">
+</iframe>
+
+### Church vs. Kingdom Thinking
+
+**This section contrasts traditional "church thinking" with "kingdom thinking," emphasizing the need to move ministry into spaces where people already gather.**
+
+Key Insights from McNeal's "Kingdom Thinking" Framework:
+
+Current Location-Based Ministry:
+
+* 45% prefer on-campus only activities
+* Strong attachment to church real estate
+* Traditional service and program focus
+
+Emerging Signs of Kingdom Thinking:
+
+* 35% open to community venues
+* Growing interest in flexible ministry times
+* Younger generations more open to alternative settings
+
+Opportunities from Survey Data:
+
+* Interest in local missions suggests readiness for change
+* Multi-generational community indicates potential for diverse approaches
+* Work schedule barriers point to need for flexible options
+
+Next Steps for Transformation:
+
+* Explore community partnerships
+* Consider alternative meeting times and locations
+* Develop ministry opportunities in public spaces
+* Train leaders for off-campus ministry
+
+This analysis suggests your congregation shows early signs of shifting toward kingdom thinking, though significant attachment to traditional church-based ministry remains.
+
+<iframe src="church_vs_kingdom.html" width="900" height="1900">
+</iframe>
+
+### Evangelism Readiness and Approaches
+
+**This section highlights key barriers to evangelism - fear of rejection, lack of genuine conversation skills, and ineffective "telemarketer" approaches.**
+
+Key Insights from McNeal's Text and Your Data:
+
+Barriers to Engagement:
+
+* Fear of rejection (45% cite as barrier)
+* Uncertainty about conversation (35%)
+* Lack of training/confidence (38%)
+* Time constraints (28%)
+
+Training Needs:
+
+* Strong desire for training (73%)
+* Only 24% very confident in faith sharing
+* Need for authentic conversation skills
+* Interest in practical approaches
+
+Service-Based Opportunities:
+
+* Oak Cottage ministry shows power of service-first approach
+* Community partnerships creating natural connections
+* Local missions providing authentic engagement
+* Growing interest in practical ministry
+
+Lessons from Ground Zero Story:
+
+* Service creates natural opportunities
+* Authentic care opens doors
+* Actions speak louder than words
+* Real needs create genuine connections
+
+The data suggests your congregation recognizes the need to move beyond "telemarketer" approaches to more authentic, service-based engagement.
+
+<iframe src="evangelism_readiness.html" width="900" height="1900">
+</iframe>
+
+### Service-First Evangelism
+
+**This section contrasts two approaches to evangelism: confrontational vs. relational, with a focus on earning the right to be heard through service and genuine care.**
+
+Key Insights from McNeal's Text and Your Data:
+
+Service-First Approach:
+
+* 35% actively engaged in community service
+* Growing focus on "acts of servanthood"
+* Oak Cottage ministry demonstrating effective model
+* Need for more service opportunities (38% interested)
+
+Relationship Building:
+
+* Highest training interest in relationship building (45%)
+* Need for authentic conversation skills
+* Focus on personal engagement over "bullhorn" methods
+* Cultural engagement training desired (42%)
+
+Current Strengths:
+
+* Established community partnerships
+* Multi-generational service opportunities
+* Growing focus on local missions
+* Service-based ministry models emerging
+
+Growth Areas:
+
+* Moving from proclamation to demonstration
+* Developing "champion" mindset vs judgment
+* Building long-term community relationships
+* Training in grace-based engagement
+
+The data suggests your congregation is beginning to embrace the service-first approach McNeal describes, though there's still work needed in developing the skills for authentic engagement.
+
+<iframe src="service_first.html" width="900" height="1900">
+</iframe>
+
+### Authentic Ministry vs. Marketing Approaches
+
+**This section contrasts marketing-based approaches with authentic ministry through prayer and genuine care.**
+
+Key Insights from McNeal's Text and Your Data:
+
+Prayer-Based Ministry:
+
+* Highest effectiveness rating (42%)
+* Strong interest in prayer support (45%)
+* More impactful than marketing approaches
+* Creates natural ministry opportunities
+
+Authentic Engagement:
+
+* Personal mentoring desired (38%)
+* Life groups valued (35%)
+* Emphasis on relationship building
+* Focus on genuine care vs. programs
+
+Marketing vs. Ministry:
+
+* Traditional programs less effective (25%)
+* Marketing efforts show lowest impact (15%)
+* Need for shift from promotion to presence
+* Value of authentic service over events
+
+Path Forward:
+
+* Emphasize prayer-centered outreach
+* Focus on relationship building
+* Develop natural faith conversations
+* Build long-term community connections
+
+The data suggests your congregation is beginning to recognize the greater effectiveness of authentic ministry approaches over marketing-based methods.
+
+<iframe src="authentic_ministry.html" width="900" height="1900">
+</iframe>
+
+### A Hypothetical Example
+
+**This section is NOT AI Generated.  It attempts to demonstrate externally-focused, service-oriented, community ministry applied to real-life possibility.**
+
+* People who use laundromats are typically poorer than those that don't.
+* People who use laundromats have some time on their hands to have a non-intrusive conversation.
+* Offer to pay for people's laundry.  This is not particularly expensive and should provide an opportunity to start some semblance of normal conversation.
+* For people who are open to the idea, provide on-the-spot budgeting help for free.  Not only pay for their laundry, but find other ways to help them free-up cash, change spending habits, create a cheaper diet, reduce transportation costs, etc.  These conversations will likely provide insight into what people's real pains and fears are.
+* Pray with people before leaving.  Introduce them to K-Love/Air1 apps for positive, encouraging, day-to-day inspiration on their journey (spiritual or otherwise).
+* Tell them about Jesus' love for them and the community of believers West Franklin when appropriate.
+* Provide appropriate substance abuse (and other) resources where appropriate.
+

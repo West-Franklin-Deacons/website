@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Community Engagement Analysis</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #13294B;
+        }
+        .container {
+            background-color: rgba(84, 86, 91, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .chart-container {
+            height: 400px;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+        }
+        .chart-wrapper {
+            flex: 1;
+            position: relative;
+        }
+        h1 {
+            color: #13294B;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        h2 {
+            color: #13294B;
+            font-size: 20px;
+            margin: 30px 0 15px 0;
+        }
+        .findings {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Community Engagement and Mission Focus</h1>
+
+        <div class="chart-container">
+            <h2>Interest in Community-Focused Activities</h2>
+            <div class="chart-wrapper">
+                <canvas id="activityInterest"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h2>Barriers to Community Engagement</h2>
+            <div class="chart-wrapper">
+                <canvas id="barriers"></canvas>
+            </div>
+        </div>
+
+        <div class="findings">
+            <h2>Key Community Engagement Patterns</h2>
+            
+            <h3>Current Strengths</h3>
+            <ul>
+                <li>Strong interest in local missions (Oak Cottage, Franklin Community)</li>
+                <li>Multi-generational community connections</li>
+                <li>Existing partnerships with community organizations</li>
+            </ul>
+
+            <h3>Growth Areas</h3>
+            <ul>
+                <li>Need for more community outreach opportunities</li>
+                <li>Interest in deeper community partnerships</li>
+                <li>Desire for mission-focused training</li>
+            </ul>
+
+            <h3>Member Readiness</h3>
+            <ul>
+                <li>73% express interest in mission/outreach training</li>
+                <li>Strong desire for practical engagement opportunities</li>
+                <li>Growing focus on community impact over internal programs</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Community Activity Interest
+        const activityData = {
+            labels: ['Local Missions', 'Community Service', 'Mission Journeys', 'Neighborhood Outreach', 'Family/Youth Programs'],
+            data: [45, 38, 32, 28, 25]
+        };
+
+        new Chart(document.getElementById('activityInterest'), {
+            type: 'bar',
+            data: {
+                labels: activityData.labels,
+                datasets: [{
+                    data: activityData.data,
+                    backgroundColor: '#00A7E1',
+                    barThickness: 40
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.raw}% of respondents`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Percentage Interested'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Barriers to Engagement
+        const barrierData = {
+            labels: ['Time Constraints', 'Family Commitments', 'Lack of Training', 'Physical Limitations', 'Financial Resources'],
+            data: [42, 35, 28, 22, 18]
+        };
+
+        new Chart(document.getElementById('barriers'), {
+            type: 'bar',
+            data: {
+                labels: barrierData.labels,
+                datasets: [{
+                    data: barrierData.data,
+                    backgroundColor: '#00A7E1',
+                    barThickness: 40
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.raw}% of respondents`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Percentage Citing Barrier'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

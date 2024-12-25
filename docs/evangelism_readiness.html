@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Evangelism Approach Analysis</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #13294B;
+        }
+        .container {
+            background-color: rgba(84, 86, 91, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .chart-container {
+            height: 400px;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+        }
+        .chart-wrapper {
+            flex: 1;
+            position: relative;
+        }
+        .insight-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .strategy-box {
+            border-left: 4px solid #00A7E1;
+            padding: 15px;
+            margin: 15px 0;
+            background-color: rgba(0, 167, 225, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Evangelism Readiness and Approaches</h1>
+
+        <div class="chart-container">
+            <h2>Gospel Sharing Confidence Levels</h2>
+            <div class="chart-wrapper">
+                <canvas id="confidenceLevels"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h2>Barriers to Community Engagement</h2>
+            <div class="chart-wrapper">
+                <canvas id="engagementBarriers"></canvas>
+            </div>
+        </div>
+
+        <div class="insight-box">
+            <h2>Current vs. Needed Approaches</h2>
+            
+            <div class="strategy-box">
+                <h3>Current Challenges</h3>
+                <ul>
+                    <li>Only 24% feel very confident in sharing faith</li>
+                    <li>73% express desire for gospel conversation training</li>
+                    <li>Fear of rejection cited as major barrier</li>
+                    <li>Uncertainty about authentic engagement methods</li>
+                </ul>
+            </div>
+
+            <div class="strategy-box">
+                <h3>Service-First Opportunities</h3>
+                <ul>
+                    <li>Oak Cottage ministry showing effectiveness of service approach</li>
+                    <li>Community partnerships creating natural relationships</li>
+                    <li>Local missions providing authentic engagement opportunities</li>
+                    <li>Younger generations more comfortable with relational approaches</li>
+                </ul>
+            </div>
+
+            <div class="strategy-box">
+                <h3>Ground Zero Lessons for Our Context</h3>
+                <ul>
+                    <li>Service creates natural opportunities for conversation</li>
+                    <li>Authentic care opens doors for deeper discussion</li>
+                    <li>Meeting real needs builds credibility</li>
+                    <li>Actions speak louder than words</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Confidence Levels Data
+        const confidenceData = {
+            labels: [
+                'Very Confident (8-10)',
+                'Growing Confidence (5-7)',
+                'Building Confidence (1-4)',
+                'Desire More Training'
+            ],
+            data: [24, 42, 34, 73]
+        };
+
+        new Chart(document.getElementById('confidenceLevels'), {
+            type: 'bar',
+            data: {
+                labels: confidenceData.labels,
+                datasets: [{
+                    data: confidenceData.data,
+                    backgroundColor: '#00A7E1',
+                    barThickness: 40
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.raw}% of respondents`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Percentage'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Engagement Barriers Data
+        const barrierData = {
+            labels: [
+                'Fear of Rejection',
+                'Lack of Training',
+                'Not Sure How to Start',
+                'Lack of Opportunities',
+                'Time Constraints'
+            ],
+            data: [45, 38, 35, 32, 28]
+        };
+
+        new Chart(document.getElementById('engagementBarriers'), {
+            type: 'bar',
+            data: {
+                labels: barrierData.labels,
+                datasets: [{
+                    data: barrierData.data,
+                    backgroundColor: '#00A7E1',
+                    barThickness: 40
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.raw}% cite as barrier`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Percentage'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

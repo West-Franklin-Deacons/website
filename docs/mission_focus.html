@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Internal vs External Ministry Focus</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #13294B;
+        }
+        .container {
+            background-color: rgba(84, 86, 91, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .chart-container {
+            height: 400px;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+        }
+        .chart-wrapper {
+            flex: 1;
+            position: relative;
+        }
+        h1 {
+            color: #13294B;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        h2 {
+            color: #13294B;
+            font-size: 20px;
+            margin: 30px 0 15px 0;
+        }
+        .insights {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+        .highlight-box {
+            border-left: 4px solid #00A7E1;
+            padding: 15px;
+            margin: 20px 0;
+            background-color: rgba(0, 167, 225, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Internal vs External Ministry Analysis</h1>
+
+        <div class="chart-container">
+            <h2>Ministry Focus Distribution</h2>
+            <div class="chart-wrapper">
+                <canvas id="ministryFocus"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h2>Outreach Readiness Indicators</h2>
+            <div class="chart-wrapper">
+                <canvas id="outreachReadiness"></canvas>
+            </div>
+        </div>
+
+        <div class="insights">
+            <h2>Key Insights</h2>
+
+            <div class="highlight-box">
+                <h3>Signs of Institutional Focus</h3>
+                <ul>
+                    <li>Strong emphasis on internal programs (youth, music, activities)</li>
+                    <li>Preference for on-campus activities in older age groups</li>
+                    <li>Comfort with existing church community</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Signs of Missional Focus</h3>
+                <ul>
+                    <li>Active engagement with Oak Cottage ministry</li>
+                    <li>Interest in community transformation</li>
+                    <li>Desire for deeper community connections</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Growth Opportunities</h3>
+                <ul>
+                    <li>More training in community engagement</li>
+                    <li>Expanding beyond comfort zones</li>
+                    <li>Building bridges to diverse communities</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Ministry Focus Distribution
+        const focusData = {
+            labels: ['Internal Programs', 'Community Outreach', 'Discipleship/Training', 'Local Missions', 'External Partnerships'],
+            data: [42, 35, 28, 25, 20]
+        };
+
+        new Chart(document.getElementById('ministryFocus'), {
+            type: 'bar',
+            data: {
+                labels: focusData.labels,
+                datasets: [{
+                    data: focusData.data,
+                    backgroundColor: '#00A7E1',
+                    barThickness: 40
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.raw}% of responses`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Percentage of Focus'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Outreach Readiness
+        const readinessData = {
+            labels: ['Confident in Faith Sharing', 'Interested in Training', 'Currently Involved', 'Seeking Opportunities', 'Have Community Connections'],
+            data: [24, 73, 32, 45, 38]
+        };
+
+        new Chart(document.getElementById('outreachReadiness'), {
+            type: 'bar',
+            data: {
+                labels: readinessData.labels,
+                datasets: [{
+                    data: readinessData.data,
+                    backgroundColor: '#00A7E1',
+                    barThickness: 40
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.raw}% of respondents`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Percentage of Members'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

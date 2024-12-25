@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Authentic Ministry Analysis</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #13294B;
+        }
+        .container {
+            background-color: rgba(84, 86, 91, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .chart-container {
+            height: 400px;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+        }
+        .chart-wrapper {
+            flex: 1;
+            position: relative;
+        }
+        .insight-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .approach-box {
+            border-left: 4px solid #00A7E1;
+            padding: 15px;
+            margin: 15px 0;
+            background-color: rgba(0, 167, 225, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: rgba(0, 167, 225, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Authentic Ministry vs. Marketing Approaches</h1>
+
+        <div class="chart-container">
+            <h2>Ministry Effectiveness by Approach</h2>
+            <div class="chart-wrapper">
+                <canvas id="ministryEffectiveness"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h2>Desired Support Types</h2>
+            <div class="chart-wrapper">
+                <canvas id="supportTypes"></canvas>
+            </div>
+        </div>
+
+        <div class="insight-box">
+            <h2>Ministry Approaches Comparison</h2>
+            
+            <table>
+                <tr>
+                    <th>Marketing Approach</th>
+                    <th>Authentic Ministry</th>
+                </tr>
+                <tr>
+                    <td>Program promotion</td>
+                    <td>Prayer and presence</td>
+                </tr>
+                <tr>
+                    <td>Event-based outreach</td>
+                    <td>Ongoing relationships</td>
+                </tr>
+                <tr>
+                    <td>Information distribution</td>
+                    <td>Life transformation</td>
+                </tr>
+                <tr>
+                    <td>Activity focus</td>
+                    <td>People focus</td>
+                </tr>
+            </table>
+
+            <div class="approach-box">
+                <h3>Current Strengths</h3>
+                <ul>
+                    <li>Growing emphasis on prayer ministry</li>
+                    <li>Strong community partnerships</li>
+                    <li>Authentic service opportunities</li>
+                    <li>Relationship-based ministries</li>
+                </ul>
+            </div>
+
+            <div class="approach-box">
+                <h3>Growth Opportunities</h3>
+                <ul>
+                    <li>More prayer-centered outreach</li>
+                    <li>Deeper community engagement</li>
+                    <li>Long-term relationship building</li>
+                    <li>Natural faith conversations</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Ministry Effectiveness Data
+        const effectivenessData = {
+            labels: [
+                'Prayer-Based Ministry',
+                'Community Service',
+                'Relationship Building',
+                'Program/Events',
+                'Marketing Efforts'
+            ],
+            data: [42, 38, 35, 25, 15]
+        };
+
+        new Chart(document.getElementById('ministryEffectiveness'), {
+            type: 'bar',
+            data: {
+                labels: effectivenessData.labels,
+                datasets: [{
+                    data: effectivenessData.data,
+                    backgroundColor: '#00A7E1',
+                    barThickness: 40
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.raw}% effectiveness rating`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Effectiveness Rating (%)'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Support Types Data
+        const supportData = {
+            labels: [
+                'Prayer Support',
+                'Personal Mentoring',
+                'Life Groups',
+                'Practical Help',
+                'Program Activities'
+            ],
+            data: [45, 38, 35, 32, 25]
+        };
+
+        new Chart(document.getElementById('supportTypes'), {
+            type: 'bar',
+            data: {
+                labels: supportData.labels,
+                datasets: [{
+                    data: supportData.data,
+                    backgroundColor: '#00A7E1',
+                    barThickness: 40
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.raw}% interest`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Interest Level (%)'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

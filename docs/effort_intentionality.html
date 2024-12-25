@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resource Allocation Analysis</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #13294B;
+        }
+        .container {
+            background-color: rgba(84, 86, 91, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .chart-container {
+            height: 400px;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+        }
+        .chart-wrapper {
+            flex: 1;
+            position: relative;
+        }
+        .insight-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .highlight {
+            border-left: 4px solid #00A7E1;
+            padding: 15px;
+            margin: 15px 0;
+            background-color: rgba(0, 167, 225, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Internal vs Community Resource Focus</h1>
+
+        <div class="chart-container">
+            <h2>Ministry Interest Distribution</h2>
+            <div class="chart-wrapper">
+                <canvas id="ministryInterest"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h2>Desired Areas for Church Growth</h2>
+            <div class="chart-wrapper">
+                <canvas id="growthAreas"></canvas>
+            </div>
+        </div>
+
+        <div class="insight-box">
+            <h2>Resource Allocation Patterns</h2>
+
+            <div class="highlight">
+                <h3>Current Internal Focus</h3>
+                <ul>
+                    <li>Traditional programs and activities</li>
+                    <li>Member services and support</li>
+                    <li>Internal spiritual development</li>
+                    <li>Facility maintenance and improvement</li>
+                </ul>
+            </div>
+
+            <div class="highlight">
+                <h3>Emerging Community Focus</h3>
+                <ul>
+                    <li>Local missions and partnerships</li>
+                    <li>Community service initiatives</li>
+                    <li>Neighborhood engagement</li>
+                    <li>Social needs response</li>
+                </ul>
+            </div>
+
+            <div class="highlight">
+                <h3>Signs of Transformation</h3>
+                <ul>
+                    <li>Interest in community partnerships</li>
+                    <li>Desire for mission-focused training</li>
+                    <li>Openness to new ministry models</li>
+                    <li>Growing focus on local impact</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Ministry Interest Distribution
+        const interestData = {
+            labels: [
+                'Internal Programs/Activities',
+                'Community Outreach',
+                'Local Missions',
+                'Spiritual Formation',
+                'Social Services'
+            ],
+            data: [45, 35, 28, 25, 22]
+        };
+
+        new Chart(document.getElementById('ministryInterest'), {
+            type: 'bar',
+            data: {
+                labels: interestData.labels,
+                datasets: [{
+                    data: interestData.data,
+                    backgroundColor: '#00A7E1',
+                    barThickness: 40
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.raw}% interested`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Percentage Interest'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Growth Areas
+        const growthData = {
+            labels: [
+                'Community Impact',
+                'Member Discipleship',
+                'Youth/Next Gen',
+                'Local Partnerships',
+                'Outreach Programs'
+            ],
+            data: [38, 35, 32, 28, 25]
+        };
+
+        new Chart(document.getElementById('growthAreas'), {
+            type: 'bar',
+            data: {
+                labels: growthData.labels,
+                datasets: [{
+                    data: growthData.data,
+                    backgroundColor: '#00A7E1',
+                    barThickness: 40
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.raw}% prioritize`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Percentage Priority'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Service-First Evangelism Analysis</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #13294B;
+        }
+        .container {
+            background-color: rgba(84, 86, 91, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .chart-container {
+            height: 400px;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+        }
+        .chart-wrapper {
+            flex: 1;
+            position: relative;
+        }
+        .approach-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .model {
+            border-left: 4px solid #00A7E1;
+            padding: 15px;
+            margin: 15px 0;
+            background-color: rgba(0, 167, 225, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Service-First Evangelism Analysis</h1>
+
+        <div class="chart-container">
+            <h2>Current Service Engagement</h2>
+            <div class="chart-wrapper">
+                <canvas id="serviceEngagement"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h2>Desired Training Areas</h2>
+            <div class="chart-wrapper">
+                <canvas id="trainingNeeds"></canvas>
+            </div>
+        </div>
+
+        <div class="approach-box">
+            <h2>Ministry Models</h2>
+            
+            <div class="model">
+                <h3>Current Service Activities</h3>
+                <ul>
+                    <li>Oak Cottage ministry involvement</li>
+                    <li>Local community partnerships</li>
+                    <li>Food and resource distribution</li>
+                    <li>Family support programs</li>
+                </ul>
+            </div>
+
+            <div class="model">
+                <h3>Growth Opportunities</h3>
+                <ul>
+                    <li>Expanded community service programs</li>
+                    <li>Relationship-building initiatives</li>
+                    <li>Long-term community engagement</li>
+                    <li>Mentoring and support systems</li>
+                </ul>
+            </div>
+
+            <div class="model">
+                <h3>Training Needs</h3>
+                <ul>
+                    <li>Authentic conversation skills</li>
+                    <li>Building genuine relationships</li>
+                    <li>Cultural engagement approaches</li>
+                    <li>Grace-based interaction methods</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Service Engagement Data
+        const serviceData = {
+            labels: ['Active Community Service', 'Local Missions', 'Regular Volunteering', 'Leadership Roles', 'New Initiatives'],
+            data: [35, 28, 22, 15, 12]
+        };
+
+        new Chart(document.getElementById('serviceEngagement'), {
+            type: 'bar',
+            data: {
+                labels: serviceData.labels,
+                datasets: [{
+                    data: serviceData.data,
+                    backgroundColor: '#00A7E1',
+                    barThickness: 40
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.raw}% engaged`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Percentage'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Training Needs Data
+        const trainingData = {
+            labels: [
+                'Relationship Building',
+                'Cultural Engagement',
+                'Service Opportunities',
+                'Communication Skills',
+                'Community Outreach'
+            ],
+            data: [45, 42, 38, 35, 32]
+        };
+
+        new Chart(document.getElementById('trainingNeeds'), {
+            type: 'bar',
+            data: {
+                labels: trainingData.labels,
+                datasets: [{
+                    data: trainingData.data,
+                    backgroundColor: '#00A7E1',
+                    barThickness: 40
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.raw}% interested`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Percentage'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

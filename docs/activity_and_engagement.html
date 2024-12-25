@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Survey Analysis Dashboard</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #13294B;
+        }
+        .container {
+            background-color: rgba(84, 86, 91, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .chart-container {
+            height: 400px;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+        }
+        .chart-container h2 {
+            margin: 0 0 20px 0;
+        }
+        .chart-wrapper {
+            flex: 1;
+            position: relative;
+        }
+        h1 {
+            color: #13294B;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        h2 {
+            color: #13294B;
+            font-size: 20px;
+            margin: 30px 0 15px 0;
+        }
+        .findings {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+        .findings h3 {
+            color: #13294B;
+            font-size: 18px;
+            margin: 20px 0 10px 0;
+        }
+        .findings ul, .findings ol {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+        .findings li {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Church Activity Preferences and Engagement Analysis</h1>
+        
+        <div class="chart-container">
+            <h2>Preferred Meeting Days by Age Group</h2>
+            <div class="chart-wrapper">
+                <canvas id="dayPreferences"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h2>Meeting Location Preferences by Age Group</h2>
+            <div class="chart-wrapper">
+                <canvas id="locationPreferences"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h2>Discipleship Growth Rating by Age Group</h2>
+            <div class="chart-wrapper">
+                <canvas id="discipleshipRating"></canvas>
+            </div>
+        </div>
+
+        <div class="findings">
+            <h2>Key Findings from Survey Responses</h2>
+            
+            <h3>Areas Needing More Attention:</h3>
+            <ol>
+                <li>Youth/Next Gen ministry
+                    <ul>
+                        <li>Need for dedicated youth minister separate from children's ministry</li>
+                        <li>More regular activities outside Sunday</li>
+                        <li>Desire for youth choir program</li>
+                        <li>Concern about retention of 12-18 age group</li>
+                    </ul>
+                </li>
+                <li>Small Groups/Life Groups
+                    <ul>
+                        <li>Need for improved quality and depth in teaching</li>
+                        <li>Better connection process for new members</li>
+                        <li>More flexible timing for working seniors</li>
+                        <li>Desire for off-campus options</li>
+                    </ul>
+                </li>
+                <li>Discipleship
+                    <ul>
+                        <li>Request for structured mentoring program</li>
+                        <li>Need for deeper biblical teaching</li>
+                        <li>Interest in practical application (marketplace, parenting)</li>
+                        <li>Support for addiction recovery</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>Where God is at Work:</h3>
+            <ul>
+                <li>Community support during personal challenges</li>
+                <li>Growth through Life Groups</li>
+                <li>Spiritual formation through sermon series</li>
+                <li>Leadership development opportunities</li>
+                <li>Support during health challenges</li>
+            </ul>
+
+            <h3>Additional Feedback Themes:</h3>
+            <ul>
+                <li>Strong appreciation for preaching quality</li>
+                <li>Desire for more traditional elements (hymns, choir)</li>
+                <li>Need for better communication about events</li>
+                <li>Challenge of connecting for introverts/newcomers</li>
+                <li>Request for more intergenerational activities</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Data for all charts
+        const ageGroups = ['19-25', '26-40', '41-55', '56-70', '71+'];
+        
+        // Day preferences data
+        const dayPreferencesData = {
+            Sunday: [1, 10, 10, 26, 25],
+            Wednesday: [1, 6, 4, 9, 12],
+            total: [2, 17, 24, 43, 45]
+        };
+
+        // Location preferences data
+        const locationPreferencesData = {
+            onCampus: [2, 9, 18, 31, 27],
+            offCampus: [0, 8, 4, 10, 11],
+            total: [2, 17, 22, 41, 38]
+        };
+
+        // Discipleship rating data
+        const discipleshipData = {
+            rating: [8.0, 7.8, 7.5, 7.9, 8.2],
+            responses: [2, 17, 22, 39, 42]
+        };
+
+        // Custom tooltip callback
+        function generateTooltip(tooltipItems) {
+            const dataIndex = tooltipItems[0].dataIndex;
+            const value = tooltipItems[0].raw;
+            const total = tooltipItems[0].dataset.total[dataIndex];
+            const count = Math.round((value / 100) * total);
+            return `${value.toFixed(1)}% (${count} respondents)\nTotal respondents: ${total}`;
+        }
+
+        // Create day preferences chart
+        new Chart(document.getElementById('dayPreferences'), {
+            type: 'bar',
+            data: {
+                labels: ageGroups,
+                datasets: [
+                    {
+                        label: 'Sunday',
+                        data: dayPreferencesData.Sunday.map((val, i) => (val / dayPreferencesData.total[i] * 100)),
+                        backgroundColor: '#00A7E1',
+                        total: dayPreferencesData.total
+                    },
+                    {
+                        label: 'Wednesday',
+                        data: dayPreferencesData.Wednesday.map((val, i) => (val / dayPreferencesData.total[i] * 100)),
+                        backgroundColor: '#13294B',
+                        total: dayPreferencesData.total
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Percentage'
+                        }
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: (context) => generateTooltip([context])
+                        }
+                    }
+                }
+            }
+        });
+
+        // Create location preferences chart
+        new Chart(document.getElementById('locationPreferences'), {
+            type: 'bar',
+            data: {
+                labels: ageGroups,
+                datasets: [
+                    {
+                        label: 'On Campus',
+                        data: locationPreferencesData.onCampus.map((val, i) => (val / locationPreferencesData.total[i] * 100)),
+                        backgroundColor: '#00A7E1',
+                        total: locationPreferencesData.total
+                    },
+                    {
+                        label: 'Off Campus',
+                        data: locationPreferencesData.offCampus.map((val, i) => (val / locationPreferencesData.total[i] * 100)),
+                        backgroundColor: '#13294B',
+                        total: locationPreferencesData.total
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Percentage'
+                        }
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: (context) => generateTooltip([context])
+                        }
+                    }
+                }
+            }
+        });
+
+        // Create discipleship rating chart
+        new Chart(document.getElementById('discipleshipRating'), {
+            type: 'bar',
+            data: {
+                labels: ageGroups,
+                datasets: [{
+                    label: 'Average Rating',
+                    data: discipleshipData.rating,
+                    backgroundColor: '#00A7E1',
+                    total: discipleshipData.responses
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 10,
+                        title: {
+                            display: true,
+                            text: 'Rating (0-10)'
+                        }
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const rating = context.raw;
+                                const responses = discipleshipData.responses[context.dataIndex];
+                                return `Rating: ${rating.toFixed(1)}\nResponses: ${responses}`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

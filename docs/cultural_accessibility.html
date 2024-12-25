@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cultural Barriers Analysis</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #13294B;
+        }
+        .container {
+            background-color: rgba(84, 86, 91, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .chart-container {
+            height: 400px;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+        }
+        .chart-wrapper {
+            flex: 1;
+            position: relative;
+        }
+        .insight-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .challenge-box {
+            border-left: 4px solid #00A7E1;
+            padding: 15px;
+            margin: 15px 0;
+            background-color: rgba(0, 167, 225, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cultural Accessibility Analysis</h1>
+
+        <div class="chart-container">
+            <h2>Service Times and Accessibility</h2>
+            <div class="chart-wrapper">
+                <canvas id="serviceAccess"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h2>Cultural Entry Points vs. Barriers</h2>
+            <div class="chart-wrapper">
+                <canvas id="entryBarriers"></canvas>
+            </div>
+        </div>
+
+        <div class="insight-box">
+            <h2>Key Cultural Considerations</h2>
+
+            <div class="challenge-box">
+                <h3>Current Cultural Expectations</h3>
+                <ul>
+                    <li>Traditional Sunday service timing (potentially excluding shift workers)</li>
+                    <li>Assumed familiarity with church culture</li>
+                    <li>Expectations about dress and behavior</li>
+                    <li>Presumed knowledge of Christian terminology</li>
+                </ul>
+            </div>
+
+            <div class="challenge-box">
+                <h3>Opportunities for Greater Accessibility</h3>
+                <ul>
+                    <li>Alternative meeting times and formats</li>
+                    <li>Community-based gatherings</li>
+                    <li>Flexible entry points for newcomers</li>
+                    <li>Intentional cultural bridge-building</li>
+                </ul>
+            </div>
+
+            <div class="challenge-box">
+                <h3>Moving Beyond "Club Membership"</h3>
+                <ul>
+                    <li>Rethinking traditional program structures</li>
+                    <li>Creating multiple pathways to belong</li>
+                    <li>Meeting people where they are</li>
+                    <li>Emphasizing relationship over conformity</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Service Accessibility Data
+        const serviceData = {
+            labels: ['Sunday Morning Only', 'Multiple Service Times', 'Alternative Days', 'Online Options', 'Community Gatherings'],
+            data: [65, 25, 15, 35, 20]
+        };
+
+        new Chart(document.getElementById('serviceAccess'), {
+            type: 'bar',
+            data: {
+                labels: serviceData.labels,
+                datasets: [{
+                    data: serviceData.data,
+                    backgroundColor: '#00A7E1',
+                    barThickness: 40
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.raw}% of engagement`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Percentage of Engagement'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Entry Points vs Barriers
+        const barrierData = {
+            labels: ['Cultural Familiarity Required', 'Schedule Flexibility Needed', 'Prior Knowledge Expected', 'Social Connections Required', 'Traditional Format Only'],
+            data: [45, 42, 38, 35, 30]
+        };
+
+        new Chart(document.getElementById('entryBarriers'), {
+            type: 'bar',
+            data: {
+                labels: barrierData.labels,
+                datasets: [{
+                    data: barrierData.data,
+                    backgroundColor: '#00A7E1',
+                    barThickness: 40
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.raw}% report as barrier`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Percentage Reporting as Barrier'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

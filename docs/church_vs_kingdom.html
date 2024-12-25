@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Church vs Kingdom Thinking Analysis</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #13294B;
+        }
+        .container {
+            background-color: rgba(84, 86, 91, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .chart-container {
+            height: 400px;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+        }
+        .chart-wrapper {
+            flex: 1;
+            position: relative;
+        }
+        .comparison-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .thinking-type {
+            border-left: 4px solid #00A7E1;
+            padding: 15px;
+            margin: 15px 0;
+            background-color: rgba(0, 167, 225, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: rgba(0, 167, 225, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Church vs Kingdom Thinking Analysis</h1>
+
+        <div class="chart-container">
+            <h2>Current Meeting Location Preferences</h2>
+            <div class="chart-wrapper">
+                <canvas id="locationPreference"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h2>Openness to Alternative Ministry Settings</h2>
+            <div class="chart-wrapper">
+                <canvas id="ministrySettings"></canvas>
+            </div>
+        </div>
+
+        <div class="comparison-box">
+            <h2>Approach Comparison</h2>
+            
+            <div class="thinking-type">
+                <h3>Current Church Thinking Indicators</h3>
+                <ul>
+                    <li>Strong preference for on-campus activities (71.1% of 71+ age group)</li>
+                    <li>Focus on traditional Sunday services</li>
+                    <li>Emphasis on bringing people to church location</li>
+                    <li>Program-centered approach to ministry</li>
+                </ul>
+            </div>
+
+            <div class="thinking-type">
+                <h3>Emerging Kingdom Thinking Signs</h3>
+                <ul>
+                    <li>Interest in community partnerships (Oak Cottage, Franklin Community)</li>
+                    <li>Younger members more open to off-campus gatherings</li>
+                    <li>Growing focus on local missions</li>
+                    <li>Desire for more flexible meeting options</li>
+                </ul>
+            </div>
+
+            <h3>Opportunities for Transformation</h3>
+            <table>
+                <tr>
+                    <th>Current Space</th>
+                    <th>Kingdom Opportunity</th>
+                </tr>
+                <tr>
+                    <td>Traditional Sunday School</td>
+                    <td>Community-based study groups</td>
+                </tr>
+                <tr>
+                    <td>Youth Programs</td>
+                    <td>School/Community Partnerships</td>
+                </tr>
+                <tr>
+                    <td>Member Services</td>
+                    <td>Community Service Initiatives</td>
+                </tr>
+                <tr>
+                    <td>Social Activities</td>
+                    <td>Community Engagement Events</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Location Preference Data
+        const locationData = {
+            labels: ['On Campus Only', 'Mix of Locations', 'Community Spaces', 'Homes/Small Groups', 'Public Venues'],
+            data: [45, 30, 15, 8, 2]
+        };
+
+        new Chart(document.getElementById('locationPreference'), {
+            type: 'bar',
+            data: {
+                labels: locationData.labels,
+                datasets: [{
+                    data: locationData.data,
+                    backgroundColor: '#00A7E1',
+                    barThickness: 40
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.raw}% preference`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Percentage'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Alternative Settings Data
+        const settingsData = {
+            labels: ['Would Consider Community Venues', 'Open to Flexible Times', 'Interest in Work-Site Ministry', 'Public Space Programs', 'Alternative Formats'],
+            data: [35, 28, 22, 15, 12]
+        };
+
+        new Chart(document.getElementById('ministrySettings'), {
+            type: 'bar',
+            data: {
+                labels: settingsData.labels,
+                datasets: [{
+                    data: settingsData.data,
+                    backgroundColor: '#00A7E1',
+                    barThickness: 40
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.raw}% interested`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Percentage'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
